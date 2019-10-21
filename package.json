@@ -1,0 +1,22 @@
+{
+  "name": "modular-wiki-userscript-base",
+  "version": "1.0.0",
+  "description": "Base for creating a modular MediaWiki userscript",
+  "homepage": "https://github.com/evad37/modular-wiki-userscript-base",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:bundle": "browserify myscriptname-src/index.js --debug -t babelify --outfile dist/out.js",
+    "build:minify": "uglifyjs dist/out.js --compress --output dist/out.min.js",
+    "build": "npm run build:bundle && npm run build:minify"
+  },
+  "author": "",
+  "license": "(MIT OR CC-BY-4.0)",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "uglify-js": "^3.6.3"
+  }
+}
