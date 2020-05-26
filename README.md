@@ -18,5 +18,16 @@ A base for creating MediaWiki userscripts using ES6 modules
       - You can use this code for the sandbox or testing version of your userscript.
    2. out.min.js - Minified version of out.js, without a sourcemap.
       - You can use this code for the main version of your userscript (that other users import), in order to reduce file size. Keep in mind that without a sourcemap, debugging could be harder
-6. Push to your repository, and copy the files to the wiki pages for your userscript (and its sandbox version)
-
+6. Commit changes and push to your repository
+7. Deploy to the wiki using `node deploy` (or by manually copy the built files). Or deploy just the sandbox version using `node deploy --sandbox`.
+   - This requires some initial setup before first use:
+      1. Set up a bot password from [[Special:BotPasswords]]
+      2. Create a file `cerentials.json` to store the username and password. This should be a plain JSON file, like:
+         ```json
+         {
+            "username": "Exampleuser@somedescription",
+            "password": "mybotpassword1234567890123456789"
+         }
+         ```
+         *Do **not** commit this file to ypur repository!*
+      3. Edit deploy.js, filling in the full page names of the main and sandbox versions of the scriptconst in the `SCRIPT_PAGE` and `SCRIPT_SANDBOX_PAGE` constants.
