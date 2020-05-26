@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:bundle": "browserify myscriptname-src/index.js --debug -t babelify --outfile dist/out.js",
     "build:minify": "uglifyjs dist/out.js --compress --output dist/out.min.js",
-    "build": "npm run build:bundle && npm run build:minify"
+    "build": "npm run build:bundle && npm run build:minify",
+    "deploy:test": "node deploy.js --sandbox",
+    "deploy": "node deploy.js"
   },
   "author": "",
   "license": "(MIT OR CC-BY-4.0)",
@@ -17,6 +19,7 @@
     "@babel/preset-env": "^7.9.6",
     "babelify": "^10.0.0",
     "browserify": "^16.5.1",
+    "mwn": "^0.4.0",
     "uglify-js": "^3.9.1"
   }
 }
