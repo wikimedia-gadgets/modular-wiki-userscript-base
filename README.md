@@ -22,7 +22,7 @@ A base for creating MediaWiki userscripts using ES6 modules
 7. Deploy to the wiki using `node deploy` (or by manually copy the built files). Or deploy just the sandbox version using `node deploy --sandbox`.
    - This requires some initial setup before first use:
       1. Set up a bot password from [[Special:BotPasswords]]
-      2. Create a file `cerentials.json` to store the username and password. This should be a plain JSON file, like:
+      2. Create a file `credentials.json` to store the username and password. This should be a plain JSON file, like:
          ```json
          {
             "username": "Exampleuser@somedescription",
