@@ -3,7 +3,7 @@ A base for creating MediaWiki userscripts using ES6 modules
 
 ## How to use
 1. Downloads files and install dependenices
-2. Rename directory "myscriptname-src", replacing 'myscriptname' with the name of your userscript
+2. Rename the directory "myscriptname-src", replacing 'myscriptname' with the name of your userscript
 3. Edit package.json:
    * In the "build:bundle" script, replace 'myscriptname' with the name of the your userscript
    * Replace other keys as require, e.g. name, verson, description, homepage...
@@ -12,7 +12,7 @@ A base for creating MediaWiki userscripts using ES6 modules
    * Modules go in the "/modules" subdirectory, and can use es6 `import` and `export`
    * index.js is for loading dependencies - typically, ResourceLoader modules and document ready, but other dependencies can go in the Promise.all array
    * Write your App in App.js, importing modules as required
-   * While Node modules could be imported, their licences (and their dependencies' licences) might not be compatible with your require licence (CC-BY-SA 3.0 for most Wikimedia wikis, like Wikipedia)
+   * While Node modules could be imported, their licences (and their dependencies' licences) might not be compatible with your required licence (CC-BY-SA 3.0 for most Wikimedia wikis, like Wikipedia)
 5. Build your app by running `npm build`. This writes two files to the "dist" directory:
    1. out.js - Bundled/transpiled version of the code, with an inline sourcemap for debugging with devtools.
       - You can use this code for the sandbox or testing version of your userscript.
@@ -29,5 +29,5 @@ A base for creating MediaWiki userscripts using ES6 modules
             "password": "mybotpassword1234567890123456789"
          }
          ```
-         *Do **not** commit this file to ypur repository!*
-      3. Edit deploy.js, filling in the full page names of the main and sandbox versions of the scriptconst in the `SCRIPT_PAGE` and `SCRIPT_SANDBOX_PAGE` constants.
+         *Do **not** commit this file to your repository!*
+      3. Edit deploy.js, filling in the full page names of the main and sandbox versions of the script in the `SCRIPT_PAGE` and `SCRIPT_SANDBOX_PAGE` constants.
